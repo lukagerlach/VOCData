@@ -1,6 +1,6 @@
-import os
-
 from sqlmodel import SQLModel, create_engine
+
+import os
 
 from backend.app.models import Site
 
