@@ -1,13 +1,14 @@
 import os
 
+from dotenv import load_dotenv
 from sqlmodel import SQLModel, create_engine
 
 from backend.app.models import Site  # noqa: F401
 
-# ein kommentar der style guidelines bricht
+# load env variables from env file
+load_dotenv(dotenv_path="../database.env")
 
-
-# retrive the environment variables for the database connection
+# retrieve the environment variables for the database connection
 ENV_POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
 ENV_POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "postgres")
 ENV_POSTGRES_DB = os.getenv("POSTGRES_DB", "postgres")
