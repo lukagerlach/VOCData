@@ -12,7 +12,8 @@ services:
       - .:/workspace
 
   db:
-    image: postgres:latest
+    # use postgis image to be able to natively handle geospatial data
+    image: postgis/postgis:latest
     env_file:
       - ./database.env
     restart: unless-stopped
