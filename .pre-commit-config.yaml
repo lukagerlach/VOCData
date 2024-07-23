@@ -40,3 +40,4 @@ repos:
     hooks:
     - id: isort
       files: ^backend/
+      args: ["--profile", "black", "--filter-files"]
