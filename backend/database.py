@@ -3,7 +3,14 @@ import os
 from dotenv import load_dotenv
 from sqlmodel import SQLModel, create_engine
 
-from backend.app.models import Site  # noqa: F401
+from backend.app.models.associations import DatasetContactLink  # noqa
+from backend.app.models.associations import DatasetPublicationLink  # noqa
+from backend.app.models.associations import DatasetVocLink  # noqa
+from backend.app.models.contact import Contact  # noqa: F401
+from backend.app.models.dataset import Dataset  # noqa: F401
+from backend.app.models.publication import Publication  # noqa: F401
+from backend.app.models.site import Site  # noqa: F401
+from backend.app.models.voc import Voc  # noqa: F401
 
 # load env variables from env file
 load_dotenv(dotenv_path="../database.env")
