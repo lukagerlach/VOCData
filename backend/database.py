@@ -11,6 +11,7 @@ from backend.app.models.dataset import Dataset  # noqa: F401
 from backend.app.models.publication import Publication  # noqa: F401
 from backend.app.models.site import Site  # noqa: F401
 from backend.app.models.voc import Voc  # noqa: F401
+from backend.app.models.voc_subclass import VocSubclass  # noqa: F401
 
 # load env variables from env file
 load_dotenv(dotenv_path="../database.env")
