@@ -30,3 +30,13 @@ class DatasetContactLink(SQLModel, table=True):
     contact_id: int | None = Field(
         default=None, foreign_key="contact.id", primary_key=True
     )
+
+
+# Link Table for Dataset VocSubclass Connection
+class DatasetVocSubclassLink(SQLModel, table=True):
+    dataset_id: int | None = Field(
+        default=None, foreign_key="dataset.id", primary_key=True
+    )
+    voc_subclass_id: int | None = Field(
+        default=None, foreign_key="voc_subclass.id", primary_key=True
+    )
