@@ -7,10 +7,12 @@ from backend.app.models.associations import (
     DatasetContactLink,
     DatasetPublicationLink,
     DatasetVocLink,
+    DatasetVocSubclassLink,
 )
 from backend.app.models.contact import Contact
 from backend.app.models.publication import Publication
 from backend.app.models.voc import Voc
+from backend.app.models.voc_subclass import VocSubclass
 
 
 class Dataset(SQLModel, table=True):
@@ -24,7 +26,7 @@ class Dataset(SQLModel, table=True):
     link_to_dataset: str | None = None
 
     # link to vocs
-    vocs: list[Voc] = Relationship(
+    vocs: list[Voc] | None = Relationship(
         back_populates="datasets", link_model=DatasetVocLink
     )
     # link to contacts
@@ -34,6 +36,11 @@ class Dataset(SQLModel, table=True):
     # link to publications
     publications: list[Publication] | None = Relationship(
         back_populates="datasets", link_model=DatasetPublicationLink
+    )
+
+    # link to voc subclasses
+    voc_subclasses: list[VocSubclass] | None = Relationship(
+        back_populates="datasets", link_model=DatasetVocSubclassLink
     )
 
     # Create database level constraint for period end after period start
