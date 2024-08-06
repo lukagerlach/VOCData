@@ -18,6 +18,19 @@ dataset_router = APIRouter(prefix="/datasets", tags=["Datasets"])
 async def create_dataset(
     dataset: Dataset, db: Annotated[Session, Depends(get_db)]
 ):
+    """
+    Create a new dataset.
+
+    This endpoint allows the creation of a new dataset in the database.
+
+    :param dataset: The dataset information to be added.
+    :type dataset: Dataset
+    :param db: The database session.
+    :type db: Session
+    :return: The created dataset.
+    :rtype: Dataset
+    """
+
     db.add(dataset)
     db.commit()
     db.refresh(dataset)
@@ -26,6 +39,17 @@ async def create_dataset(
 
 @dataset_router.get("/")
 async def get_datasets(db: Annotated[Session, Depends(get_db)]):
+    """
+    Retrieve all datasets.
+
+    This endpoint retrieves all datasets stored in the database.
+
+    :param db: The database session.
+    :type db: Session
+    :return: A list of all datasets.
+    :rtype: list[Dataset]
+    """
+
     return db.query(Dataset).all()
 
 
@@ -33,6 +57,19 @@ async def get_datasets(db: Annotated[Session, Depends(get_db)]):
 async def get_datasets_by_site_id(
     site_id: int, db: Annotated[Session, Depends(get_db)]
 ):
+    """
+    Retrieve datasets by site ID.
+
+    This endpoint retrieves datasets associated with a specific site.
+
+    :param site_id: The ID of the site.
+    :type site_id: int
+    :param db: The database session.
+    :type db: Session
+    :return: A list of datasets associated with the specified site.
+    :rtype: list[Dataset]
+    """
+
     statement = select(Dataset).where(Dataset.site_id == site_id)
     return db.exec(statement).all()
 
@@ -41,6 +78,19 @@ async def get_datasets_by_site_id(
 async def get_datasets_by_country(
     country: str, db: Annotated[Session, Depends(get_db)]
 ):
+    """
+    Retrieve datasets by country.
+
+    This endpoint retrieves datasets associated with a specific country.
+
+    :param country: The name of the country.
+    :type country: str
+    :param db: The database session.
+    :type db: Session
+    :return: A list of datasets associated with the specified country.
+    :rtype: list[Dataset]
+    """
+
     statement = select(Dataset).where(Dataset.site.country == country)
     return db.exec(statement).all()
 
@@ -49,6 +99,30 @@ async def get_datasets_by_country(
 async def get_datasets_by_subclass_name(
     subclass_name: str, db: Annotated[Session, Depends(get_db)]
 ):
+    """
+    Retrieve datasets by VOC subclass name.
+
+    This endpoint retrieves datasets associated with a specific VOC subclass.
+    This checks multiple cases:
+
+        - is VOC subclass directly associated with dataset?
+        - is VOC subclass indirectly associated with dataset, \
+        i.e. is an ancestor of directly linked VOC Subclass
+        - is VOC subclass associated with specific VOC, \
+        that is directly associated with this dataset?
+        - is VOC subclass indirectly associated with specific VOC, \
+        that is directly associated with this dataset, i.e.\
+        is VOC Subclass ancestor of directly linked VOCs Subclass
+
+    :param subclass_name: The name of the VOC subclass.
+    :type subclass_name: str
+    :param db: The database session.
+    :type db: Session
+    :return: A list of datasets associated with the specified VOC subclass.
+    :rtype: list[Dataset]
+    :raise HTTPException: no datasets found for subclass
+
+    """
 
     # get subclass_id by name
     given_subclass_id = (
@@ -116,6 +190,27 @@ async def get_datasets_within_area(
     max_lat: float,
     db: Annotated[Session, Depends(get_db)],
 ):
+    """
+    Retrieve datasets within a specified area.
+
+    This endpoint retrieves datasets that are \
+    located within a specified bounding box.
+
+    :param min_lon: Minimum longitude of the bounding box.
+    :type min_lon: float
+    :param min_lat: Minimum latitude of the bounding box.
+    :type min_lat: float
+    :param max_lon: Maximum longitude of the bounding box.
+    :type max_lon: float
+    :param max_lat: Maximum latitude of the bounding box.
+    :type max_lat: float
+    :param db: The database session.
+    :type db: Session
+    :return: A list of datasets within the specified bounding box.
+    :rtype: list[Dataset]
+    :raise HTTPException: no datasets found in that area
+    """
+
     # Define the bounding box
     bbox = (
         f"POLYGON(({min_lon} {min_lat}, {min_lon} {max_lat}, {max_lon}"

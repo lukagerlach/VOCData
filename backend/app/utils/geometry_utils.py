@@ -8,11 +8,14 @@ from shapely.geometry import shape
 def geojson_to_geometry(geo_location: Point | None) -> WKTElement | None:
     """
     Convert GeoJSON to PostGIS Geometry (WKTElement).
-    This is needed to transform pydantic GEOJson Objects into
-     WKTElement objects, to store them in the database.
+    This is needed to transform pydantic GEOJson Objects into \
+    WKTElement objects, to store them in the database.
+    Use before writing data from api into postgis db.
 
     :param geo_location: Single GeoJSON object or list of GeoJSON objects.
+    :type geo_location: Point
     :return: PostGIS Geometry (WKTElement) or list of WKTElement objects.
+    :rtype: WKTElement
     """
     if geo_location is not None:
         return wkt.dumps(shape(geo_location))
@@ -23,12 +26,14 @@ def geojson_to_geometry(geo_location: Point | None) -> WKTElement | None:
 def geometry_to_geojson(geometry: WKBElement | None) -> Point | None:
     """
     Convert a PostGIS Geometry (WKBElement) to a GeoJSON Point.
-    This is needed to transform WKBElement objects into
-     pydantic GEOJson Objects, to read them from the database.
+    This is needed to transform WKBElement objects into \
+    pydantic GEOJson Objects, to read them from the database.
+    Use after retrieving data from db to return to api.
 
     :param geometry: A PostGIS Geometry (WKBElement) object.
-    :return: if location is given: A GeoJSON Point object.
-        else: None
+    :type geometry: WKBElement
+    :return: if location is given: A GeoJSON Point object. Else None.
+    :rtype: Point
     """
 
     if geometry is not None:
