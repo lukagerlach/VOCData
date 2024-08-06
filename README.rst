@@ -12,7 +12,7 @@ Welcome to VOCData, the VOC Dataset Management System! This project is designed 
 Our system offers a comprehensive API to handle various operations related to datasets, VOCs, VOC subclasses, research sites, and associated contacts and publications.
 
 Key Features
-############
+============
 
 **Dataset Management**
 
@@ -51,9 +51,8 @@ It is suggested to checkout the API docs to get familiar with the project and it
 
         $ docker compose up --build
 
-
 Development Environment
-#######################
+=======================
 There are two approaches to develop this project locally, either the "classic" way by developing on your local machine, or directly inside a container using dev containers.
 
 Devcontainers
@@ -129,7 +128,7 @@ Since this is a FastAPI App, just run the following command to start your backen
 Your backend now runs on port 80 of your local machine. to check the API docs call `http://localhost:80/docs`
 
 Useful Resources
-################
+================
 
 This project builds upon a lot of libraries, tools and technologies.
 To get a better understanding of how it works, these resources might be helpful:
