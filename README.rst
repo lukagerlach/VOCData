@@ -53,7 +53,7 @@ It is suggested to checkout the API docs to get familiar with the project and it
 
 
 Development Environment
-=======================
+#######################
 There are two approaches to develop this project locally, either the "classic" way by developing on your local machine, or directly inside a container using dev containers.
 
 Devcontainers
@@ -129,7 +129,7 @@ Since this is a FastAPI App, just run the following command to start your backen
 Your backend now runs on port 80 of your local machine. to check the API docs call `http://localhost:80/docs`
 
 Useful Resources
-================
+################
 
 This project builds upon a lot of libraries, tools and technologies.
 To get a better understanding of how it works, these resources might be helpful:
