@@ -17,7 +17,7 @@ This is the documentation for the VOCData project, find links to useful resource
    Authors <authors>
 
 Codebase Docs
-============
+=============
 
 .. toctree::
    :maxdepth: 1

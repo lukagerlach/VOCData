@@ -16,7 +16,11 @@ jobs:
           pip install sphinx pydata-sphinx-theme myst_parser
       - name: Sphinx build
         run: |
-          sphinx-build docs docs/build
+          cd docs
+          make html
+      - name: Create .nojekyll
+        run: |
+          touch docs/build/html/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -24,4 +28,5 @@ jobs:
           publish_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/build
+          keep_files: true
           force_orphan: true
