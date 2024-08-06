@@ -17,6 +17,39 @@ from backend.app.models.voc_subclass import VocSubclass
 
 
 class Dataset(SQLModel, table=True):
+    """
+    Represents a dataset.
+
+    This class models a dataset and its various attributes.
+
+    :param id: The unique identifier of the dataset.
+    :type id: int
+    :param site_id: The ID of the associated site.
+    :type site_id: int
+    :param site: The site associated with the dataset.
+    :type site: Site
+    :param sampling_period_begin: The start date of the sampling period.
+    :type sampling_period_begin: date
+    :param sampling_period_end: The end date of the sampling period.
+    :type sampling_period_end: date
+    :param time_resolution_unit: The unit of time resolution.
+    :type time_resolution_unit: TimeResolutionUnitEnum
+    :param time_resolution_interval: The interval of time resolution.
+    :type time_resolution_interval: int
+    :param data_type: The type of data in the dataset.
+    :type data_type: str
+    :param link_to_dataset: The link to the dataset.
+    :type link_to_dataset: str
+    :param vocs: The VOCs associated with the dataset.
+    :type vocs: list[Voc]
+    :param contacts: The contacts associated with the dataset.
+    :type contacts: list[Contact]
+    :param publications: The publications associated with the dataset.
+    :type publications: list[Publication]
+    :param voc_subclasses: The VOC subclasses associated with the dataset.
+    :type voc_subclasses: list[VocSubclass]
+    """
+
     id: int | None = Field(primary_key=True, default=None)
     site_id: int | None = Field(default=None, foreign_key="site.id")
     site: Site = Relationship(back_populates="datasets")

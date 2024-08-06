@@ -21,6 +21,19 @@ voc_subclass_router = APIRouter(
 async def create_voc_subclass(
     voc_subclass: VocSubclass, db: Annotated[Session, Depends(get_db)]
 ):
+    """
+    Create a new VOC subclass.
+
+    This endpoint allows the creation of a new VOC subclass in the database.
+
+    :param voc_subclass: The VOC subclass information to be added.
+    :type voc_subclass: VocSubclass
+    :param db: The database session.
+    :type db: Session
+    :return: The created VOC subclass.
+    :rtype: VocSubclass
+    """
+
     db.add(voc_subclass)
     db.commit()
     db.refresh(voc_subclass)
@@ -28,6 +41,17 @@ async def create_voc_subclass(
 
 @voc_subclass_router.get("/")
 async def get_voc_subclasses(db: Session = Depends(get_db)):
+    """
+    Retrieve all VOC subclasses.
+
+    This endpoint retrieves all VOC subclasses stored in the database.
+
+    :param db: The database session.
+    :type db: Session
+    :return: A list of all VOC subclasses.
+    :rtype: list[VocSubclass]
+    """
+
     return db.query(VocSubclass).all()
 
 
@@ -35,6 +59,23 @@ async def get_voc_subclasses(db: Session = Depends(get_db)):
 async def get_voc_subclasses_by_voc_id(
     voc_id: int, db: Session = Depends(get_db)
 ):
+    """
+    Retrieve VOC subclasses by VOC ID.
+
+    This endpoint retrieves VOC subclasses associated with a specific VOC.
+
+    :param voc_id: The ID of the VOC.
+    :type voc_id: int
+    :param db: The database session.
+    :type db: Session
+    :return: A list of VOC subclasses associated with the specified VOC.
+    :rtype: list[VocSubclass]
+
+    :raise HTTPException: no VOC found for id
+    :raise HTTPException: no VOC Subclasses found for VOC
+
+    """
+
     try:
         voc = db.exec(select(Voc).where(Voc.id == voc_id)).one()
 

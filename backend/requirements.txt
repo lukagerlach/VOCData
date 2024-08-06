@@ -4,7 +4,9 @@ GeoAlchemy2==0.15.2
 geojson-pydantic==1.1.0
 psycopg2-binary==2.9.9
 pydantic==2.8.2
+pydata-sphinx-theme==0.15.4
 python-dotenv==1.0.1
 shapely==2.0.5
+sphinx==8.0.2
 sqlmodel==0.0.20
 uvicorn==0.30.1

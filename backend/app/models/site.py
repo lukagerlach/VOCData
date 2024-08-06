@@ -10,6 +10,27 @@ from backend.app.utils.geometry_utils import (  # noqa: E501
 
 
 class Site(SQLModel, table=True):
+    """
+    Represents a site.
+
+    This class models a site where datasets are collected.
+
+    :param id: The unique identifier of the site.
+    :type id: int
+    :param name: The name of the site.
+    :type name: str
+    :param region: The region where the site is located.
+    :type region: str
+    :param country: The country where the site is located.
+    :type country: str
+    :param typology: The typology of the site.
+    :type typology: str
+    :param geo_location: The geographical location of the site.
+    :type geo_location: Point
+    :param datasets: The datasets associated with the site.
+    :type datasets: list[Dataset]
+    """
+
     id: int | None = Field(primary_key=True, default=None)
     name: str | None = None
     region: str | None = None
