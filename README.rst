@@ -9,7 +9,7 @@ Welcome to VOCData, the VOC Dataset Management System! This project is designed 
 * Quick retrieval of contact info for datasets
 * and many more...
 
-Our system offers a comprehensive API to handle various operations related to datasets, VOCs, VOC subclasses, research sites, and associated contacts and publications.
+Our system offers a comprehensive API to handle various operations related to datasets, VOCs, VOC subclasses, research sites, and associated contacts and publications. You can find the full documentation here: `Documentation <https://lukagerlach.github.io/VOCData/>`_
 
 Key Features
 ============
