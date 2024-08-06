@@ -1,11 +1,12 @@
 import os
 
 from dotenv import load_dotenv
-from sqlmodel import SQLModel, create_engine
+from sqlmodel import Session, SQLModel, create_engine
 
-from backend.app.models.associations import DatasetContactLink  # noqa
-from backend.app.models.associations import DatasetPublicationLink  # noqa
-from backend.app.models.associations import DatasetVocLink  # noqa
+from backend.app.models.associations import DatasetContactLink  # noqa: F401
+from backend.app.models.associations import DatasetPublicationLink  # noqa: F401
+from backend.app.models.associations import DatasetVocLink  # noqa: F401
+from backend.app.models.associations import DatasetVocSubclassLink  # noqa: F401
 from backend.app.models.contact import Contact  # noqa: F401
 from backend.app.models.dataset import Dataset  # noqa: F401
 from backend.app.models.publication import Publication  # noqa: F401
@@ -20,7 +21,7 @@ load_dotenv(dotenv_path="../database.env")
 ENV_POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
 ENV_POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "postgres")
 ENV_POSTGRES_DB = os.getenv("POSTGRES_DB", "postgres")
-ENV_POSTGRES_SERVER = os.getenv("POSTGRES_SERVER", "db")
+ENV_POSTGRES_SERVER = os.getenv("POSTGRES_SERVER", "localhost")
 ENV_POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5432")
 
 # create the database URL
@@ -29,8 +30,14 @@ DATABASE_URL = (
     f"@{ENV_POSTGRES_SERVER}:{ENV_POSTGRES_PORT}/{ENV_POSTGRES_DB}"
 )
 
+engine = create_engine(DATABASE_URL, echo=True)
+
 
 # create the database
 def init_db() -> None:
-    engine = create_engine(DATABASE_URL, echo=True)
     SQLModel.metadata.create_all(engine)
+
+
+def get_db():
+    with Session(engine) as session:
+        yield session

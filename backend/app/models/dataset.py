@@ -11,13 +11,15 @@ from backend.app.models.associations import (
 )
 from backend.app.models.contact import Contact
 from backend.app.models.publication import Publication
+from backend.app.models.site import Site
 from backend.app.models.voc import Voc
 from backend.app.models.voc_subclass import VocSubclass
 
 
 class Dataset(SQLModel, table=True):
     id: int | None = Field(primary_key=True, default=None)
-    site_id: int = Field(default=None, foreign_key="site.id")
+    site_id: int | None = Field(default=None, foreign_key="site.id")
+    site: Site = Relationship(back_populates="datasets")
     sampling_period_begin: date | None = None
     sampling_period_end: date | None = None
     time_resolution_unit: TimeResolutionUnitEnum | None = None

@@ -38,5 +38,5 @@ class DatasetVocSubclassLink(SQLModel, table=True):
         default=None, foreign_key="dataset.id", primary_key=True
     )
     voc_subclass_id: int | None = Field(
-        default=None, foreign_key="voc_subclass.id", primary_key=True
+        default=None, foreign_key="vocsubclass.id", primary_key=True
     )
