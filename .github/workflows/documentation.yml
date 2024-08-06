@@ -23,18 +23,16 @@ jobs:
           pip install sphinx pydata-sphinx-theme myst_parser
       - name: Sphinx build
         run: |
-          echo "Current directory before Sphinx build: $(pwd)"
-          echo "Contents of the docs directory:"
-          sphinx-build docs docs/build
+          sphinx-build backend/docs backend/docs/build
       - name: Create .nojekyll
         run: |
-          touch docs/build/html/.nojekyll
+          touch backend/docs/build/html/.nojekyll
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           publish_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/build/html
+          publish_dir: backend/docs/build/html
           keep_files: true
           force_orphan: true
