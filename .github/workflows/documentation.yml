@@ -23,7 +23,7 @@ jobs:
           pip install sphinx pydata-sphinx-theme myst_parser
       - name: Sphinx build
         run: |
-          sphinx-build backend/docs backend/docs/build
+          sphinx-build backend/docs/source backend/docs/build
       - name: Create .nojekyll
         run: |
           touch backend/docs/build/html/.nojekyll
