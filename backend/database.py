@@ -21,7 +21,7 @@ load_dotenv(dotenv_path="../database.env")
 ENV_POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
 ENV_POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", "postgres")
 ENV_POSTGRES_DB = os.getenv("POSTGRES_DB", "postgres")
-ENV_POSTGRES_SERVER = os.getenv("POSTGRES_SERVER", "localhost")
+ENV_POSTGRES_SERVER = os.getenv("POSTGRES_SERVER", "db")
 ENV_POSTGRES_PORT = os.getenv("POSTGRES_PORT", "5432")
 
 # create the database URL
