@@ -9,8 +9,22 @@
 import os
 import sys
 
+print(sys.path)
 sys.path.insert(0, os.path.abspath("../../.."))
 print(sys.path)
+path = sys.path[0]
+
+
+def print_directory_structure(path, indent=0):
+    for item in os.listdir(path):
+        item_path = os.path.join(path, item)
+        print(" " * indent + item)
+        if os.path.isdir(item_path):
+            print_directory_structure(item_path, indent + 4)
+
+
+print_directory_structure(path)
+
 
 project = "VOCData"
 copyright = "2024, Luka Gerlach"
