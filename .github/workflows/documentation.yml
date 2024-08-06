@@ -11,11 +11,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
+
+      - name: Debug List repository contents
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Contents of the repository:"
+          ls -R
+
       - name: Install dependencies
         run: |
           pip install sphinx pydata-sphinx-theme myst_parser
       - name: Sphinx build
         run: |
+          echo "Current directory before Sphinx build: $(pwd)"
+          echo "Contents of the docs directory:"
           sphinx-build docs docs/build
       - name: Create .nojekyll
         run: |
