@@ -152,5 +152,3 @@ To get a better understanding of how it works, these resources might be helpful:
 `Pre-commit <https://pre-commit.com>`_
 
 `Sphinx <https://www.sphinx-doc.org/en/master/>`_
-
-Some temp doc change
