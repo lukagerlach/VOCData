@@ -1,6 +1,12 @@
 from geoalchemy2 import Geometry
 from geojson_pydantic import Point
+from sqlalchemy import event
 from sqlmodel import Column, Field, Relationship, SQLModel
+
+from backend.app.utils.geometry_utils import (  # noqa: E501
+    geojson_to_geometry,
+    geometry_to_geojson,
+)
 
 
 class Site(SQLModel, table=True):
@@ -19,3 +25,15 @@ class Site(SQLModel, table=True):
     datasets: list["Dataset"] | None = Relationship(  # noqa: F821
         back_populates="site"
     )
+
+
+def site_before_insert(mapper, connection, target):
+    target.geo_location = geojson_to_geometry(target.geo_location)
+
+
+def site_after_load(target, context):
+    target.geo_location = geometry_to_geojson(target.geo_location)
+
+
+event.listen(Site, "before_insert", site_before_insert)
+event.listen(Site, "load", site_after_load)

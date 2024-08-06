@@ -4,10 +4,6 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session, func, select
 
 from backend.app.models.site import Site
-from backend.app.utils.geometry_utils import (  # noqa: E501
-    geojson_to_geometry,
-    geometry_to_geojson,
-)
 from backend.database import get_db
 
 site_router = APIRouter(prefix="/sites", tags=["Research Sites"])
@@ -15,22 +11,15 @@ site_router = APIRouter(prefix="/sites", tags=["Research Sites"])
 
 @site_router.post("/", response_model=Site)
 async def create_site(site: Site, db: Annotated[Session, Depends(get_db)]):
-    # transform geojson to postgis compatible format WKTElement
-    site.geo_location = geojson_to_geometry(site.geo_location)
     db.add(site)
     db.commit()
     db.refresh(site)
-    # set geo_location back to geojson to return proper json object
-    site.geo_location = geometry_to_geojson(site.geo_location)
     return site
 
 
 @site_router.get("/")
 async def get_sites(db: Annotated[Session, Depends(get_db)]):
     sites = db.query(Site).all()
-    for site in sites:
-        if site.geo_location:
-            site.geo_location = geometry_to_geojson(site.geo_location)
     return sites
 
 
