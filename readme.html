@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>VOCData &#8212; VOCData 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'readme';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="VOCData" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">VOCData 0.0.1 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Readme
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="license.html">
+    License
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    Authors
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="codedocs.html">
+    Code Documentation
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Readme
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="license.html">
+    License
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="authors.html">
+    Authors
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="codedocs.html">
+    Code Documentation
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">VOCData</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="vocdata">
+<h1>VOCData<a class="headerlink" href="#vocdata" title="Link to this heading">#</a></h1>
+<p>Welcome to VOCData, the VOC Dataset Management System! This project is designed to facilitate the management and retrieval of datasets containing data about Volatile Organic Compounds (VOCs) and their subclasses. It aims to become a central source of information about worldwide VOC data, subsequently aiming to answer interesting questions related to VOC data, e.g.:</p>
+<ul class="simple">
+<li><p>Geographical over or under representations of areas</p></li>
+<li><p>Analysis of specific VOCs for datasets</p></li>
+<li><p>Quick retrieval of contact info for datasets</p></li>
+<li><p>and many more…</p></li>
+</ul>
+<p>Our system offers a comprehensive API to handle various operations related to datasets, VOCs, VOC subclasses, research sites, and associated contacts and publications. You can find the full documentation here: <a class="reference external" href="https://lukagerlach.github.io/VOCData/">Documentation</a></p>
+<section id="key-features">
+<h2>Key Features<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h2>
+<p><strong>Dataset Management</strong></p>
+<ul class="simple">
+<li><p>Create Datasets: Add new datasets to the system.</p></li>
+<li><p>Retrieve Datasets: Fetch all datasets or filter datasets by specific criteria such as site, country, VOC subclass, or geographic area.</p></li>
+<li><p>Dataset Association: Link datasets to VOC subclasses and sites, allowing for hierarchical data organization and retrieval.</p></li>
+</ul>
+<p><strong>VOC and VOC Subclass Management</strong></p>
+<ul class="simple">
+<li><p>Create VOCs: Add new VOCs to the system.</p></li>
+<li><p>Retrieve VOCs: Fetch all VOCs or filter VOCs by subclass name.</p></li>
+<li><p>Add Relationships: add relationships between VOCs and VOC subclasses, or hierarchical relationships between subclasses.</p></li>
+<li><p>VOC Subclasses: Manage and retrieve VOC subclasses, including retrieving all subclasses associated with a specific VOC and hierarchical VOC Subclass relationships.</p></li>
+</ul>
+<p><strong>Site Management</strong></p>
+<ul class="simple">
+<li><p>Create Sites: Add new research sites where data is collected.</p></li>
+<li><p>Retrieve Sites: Fetch all research sites or filter sites within a specific geographic area.</p></li>
+</ul>
+<p><strong>Contact Management</strong></p>
+<ul class="simple">
+<li><p>Create Contacts: Add new contacts associated with datasets.</p></li>
+<li><p>Retrieve Contacts: Fetch all contacts or retrieve contacts associated with a specific dataset.</p></li>
+</ul>
+<p><strong>Publication Management</strong></p>
+<ul class="simple">
+<li><p>Create Publications: Add new publications referencing datasets.</p></li>
+<li><p>Retrieve Publications: Fetch all publications in the system, retrieve publications for a specific dataset.</p></li>
+</ul>
+</section>
+<section id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h2>
+<p>The easiest way to get started with VOCData is via docker-compose. This will start 2 containers, one for the database and one for the backend providing the API. Swagger UI automatically generates API docs that are available under <code class="code docutils literal notranslate"><span class="pre">&lt;your_host&gt;:&lt;your_port&gt;/docs</span></code> (<code class="code docutils literal notranslate"><span class="pre">localhost:80/docs</span></code>) as soon as the app started.
+It is suggested to checkout the API docs to get familiar with the project and its functions.  To get a better understanding of the underlying datastructure, check out <a class="reference external" href="https://miro.com/welcomeonboard/MDlDZVExalgzcnNwRjc4Z0ZiRlN2SDc2QmhxSVNzQm1vR0JqY0dwcWxrOXd2VmRLT2tmS3M2Y1NzTFo4QXhicHwzNDU4NzY0NTU1Nzg0OTI4Mjk1fDI=?share_link_id=185847563129">this model</a>.</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>--build
+</pre></div>
+</div>
+</section>
+<section id="development-environment">
+<h2>Development Environment<a class="headerlink" href="#development-environment" title="Link to this heading">#</a></h2>
+<p>There are two approaches to develop this project locally, either the “classic” way by developing on your local machine, or directly inside a container using dev containers.</p>
+<section id="devcontainers">
+<h3>Devcontainers<a class="headerlink" href="#devcontainers" title="Link to this heading">#</a></h3>
+<p>Developing from within a <a class="reference external" href="https://code.visualstudio.com/docs/devcontainers/containers">dev container</a> eliminates discrepancies between your development environment (usually your local machine) and the container environment,
+therefore eliminating related issues (e.g. non matching python versions). It fully relies on Docker and an IDE that supports development from inside a container (e.g. VSC or PyCharm).
+Dev containers rely on Microsofts <a class="reference external" href="https://containers.dev/implementors/spec/">dev container specification</a>. The dev container configuration can be found in <code class="code docutils literal notranslate"><span class="pre">.devcontainer/backend/devcontainer.json</span></code>.
+While this is the fastest way to set up a local dev environment, it misses some functionality in comparison to the regular approach (e.g. ease of debugging).</p>
+</section>
+<section id="local-development">
+<h3>Local Development<a class="headerlink" href="#local-development" title="Link to this heading">#</a></h3>
+<p><strong>Prerequisites:</strong></p>
+<ul class="simple">
+<li><p>Python &#64;3.10 and pip</p></li>
+</ul>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>--version<span class="w">              </span><span class="m">3</span>.10.x
+<span class="gp">$ </span>pip<span class="w"> </span>--version
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>pre-commit (<a class="reference external" href="https://pre-commit.com">docs</a>)</p></li>
+</ul>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>pre-commit
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>VOCData
+<span class="gp">$ </span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+<p><strong>Setup the repository:</strong></p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp"># </span>Clone<span class="w"> </span>the<span class="w"> </span>repo
+<span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/lukagerlach/VOCData.git
+<span class="gp"># </span>navigate<span class="w"> </span>to<span class="w"> </span>backend<span class="w"> </span>folder
+<span class="gp"># </span><span class="nb">cd</span><span class="w"> </span>backend
+<span class="gp"># </span>Create<span class="w"> </span>virtual<span class="w"> </span>environment<span class="w"> </span>named<span class="w"> </span>venv
+<span class="gp">$ </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="gp"># </span>Active<span class="w"> </span>environment
+<span class="gp">$ </span><span class="se">\v</span>env<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">            </span>Windows
+<span class="gp">$ </span><span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">          </span>Unix<span class="w"> </span>based<span class="w"> </span>OS
+<span class="gp"># </span>Install<span class="w"> </span>dependencies
+<span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p><strong>Startup application:</strong></p>
+<p>To startup the database, it is suggested to make use of docker compose, but only start the database container. Therefore, just run:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>db<span class="w"> </span>--build
+</pre></div>
+</div>
+<p>Your database is now exposed to your local machine on the port specified in the <cite>compose.yaml</cite>.
+The database is built from a postgis image, to be able to natively handle geo-spatial data.</p>
+<p>Before starting up the FastAPI backend app, it is necessary to configure the database connection.
+While this is automatically handled by docker if we run the backend in a container, running it locally requires some extra setup.
+Therefore, create a <cite>database.env</cite> file and put in the following variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POSTGRES_SERVER</span><span class="o">=</span><span class="n">localhost</span>
+</pre></div>
+</div>
+<p>This way, your backend will now try to find the database on your local machine, not inside the docker network.
+Since this is a FastAPI App, just run the following command to start your backend:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>fastapi<span class="w"> </span>run<span class="w"> </span>app/main.py<span class="w"> </span>--port<span class="w"> </span><span class="m">80</span><span class="w"> </span>--reload
+</pre></div>
+</div>
+<p>Your backend now runs on port 80 of your local machine. to check the API docs call <cite>http://localhost:80/docs</cite></p>
+</section>
+</section>
+<section id="useful-resources">
+<h2>Useful Resources<a class="headerlink" href="#useful-resources" title="Link to this heading">#</a></h2>
+<p>This project builds upon a lot of libraries, tools and technologies.
+To get a better understanding of how it works, these resources might be helpful:</p>
+<p><a class="reference external" href="https://docs.docker.com">Docker Docs</a></p>
+<p><a class="reference external" href="https://docs.docker.com/compose/">Docker Compose Docs</a></p>
+<p><a class="reference external" href="https://fastapi.tiangolo.com">FastApi Docs</a></p>
+<p><a class="reference external" href="https://swagger.io/specification/">OpenApi Spec</a></p>
+<p><a class="reference external" href="https://docs.pydantic.dev/latest/">Pydantic</a></p>
+<p><a class="reference external" href="https://sqlmodel.tiangolo.com">Sqlmodel</a></p>
+<p><a class="reference external" href="https://www.sqlalchemy.org">SqlAlchemy</a></p>
+<p><a class="reference external" href="https://postgis.net">Postgis</a></p>
+<p><a class="reference external" href="https://pre-commit.com">Pre-commit</a></p>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a></p>
+<p><a class="reference external" href="https://www.pgadmin.org">PGAdmin</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">VOCData</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="license.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">License</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features">Key Features</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quickstart">Quickstart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-environment">Development Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#devcontainers">Devcontainers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-development">Local Development</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-resources">Useful Resources</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/readme.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Luka Gerlach.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.0.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
